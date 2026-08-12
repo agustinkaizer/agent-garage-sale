@@ -1,0 +1,32 @@
+name: 🔄 Una plataforma cambió y la guía quedó vieja
+description: Facebook, MercadoLibre, Reddit o Correo cambiaron algo y un paso del método ya no funciona así
+title: "[Desactualizado] "
+labels: ["desactualizado"]
+body:
+  - type: dropdown
+    id: plataforma
+    attributes:
+      label: Plataforma
+      options:
+        - Facebook Marketplace / grupos
+        - MercadoLibre
+        - Reddit
+        - Correo Argentino / MiCorreo
+        - Google Sheets / Apps Script
+        - Otra
+    validations:
+      required: true
+  - type: input
+    id: guia
+    attributes:
+      label: Qué archivo del repo quedó viejo
+      placeholder: "docs/aprendizajes-plataformas.md, sección ..."
+    validations:
+      required: true
+  - type: textarea
+    id: cambio
+    attributes:
+      label: Qué dice la guía y qué pasa en realidad hoy
+      description: Sin datos personales tuyos ni de compradores
+    validations:
+      required: true

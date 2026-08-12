@@ -1,0 +1,41 @@
+name: 🚫 MiCorreo me rechazó el CSV
+description: El portal de Correo Argentino no aceptó el archivo generado por la planilla
+title: "[CSV rechazado] "
+labels: ["formato-correo"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Gracias por reportarlo — así mantenemos el formato al día entre todos.
+        ⚠️ **Antes de pegar nada: borrá los datos del comprador** (nombre, email,
+        teléfono, dirección). Reemplazalos por `XXX`. Solo importa la estructura.
+  - type: input
+    id: error
+    attributes:
+      label: El mensaje de error exacto del portal
+      description: Textual, como lo muestra MiCorreo (ej. "Número de orden debe ser numérico (Fila 6)")
+      placeholder: '"..."'
+    validations:
+      required: true
+  - type: textarea
+    id: linea
+    attributes:
+      label: La línea del CSV que falló (sin datos personales)
+      description: La fila del archivo que el portal señala, con los datos del comprador reemplazados por XXX
+      render: text
+    validations:
+      required: true
+  - type: input
+    id: fecha
+    attributes:
+      label: Fecha de tu copia de la plantilla
+      description: Está en la pestaña Instrucciones (o decinos cuándo hiciste la copia)
+    validations:
+      required: false
+  - type: textarea
+    id: chequeo
+    attributes:
+      label: ¿Qué decía la columna Chequeo (V) de esa fila?
+      description: Si decía ✅ OK y el portal igual la rechazó, es justo lo que necesitamos saber
+    validations:
+      required: false
